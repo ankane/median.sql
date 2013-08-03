@@ -8,7 +8,10 @@ $$
     WHEN array_upper($1, 1) = 0 THEN null
     WHEN mod(array_upper($1, 1), 2) = 1 THEN asorted[ceiling(array_upper(asorted, 1) / 2.0)]
     ELSE (
-      (asorted[ceiling(array_upper(asorted, 1) / 2.0)] + asorted[ceiling(array_upper(asorted, 1) / 2.0) + 1]) / 2.0
+      (
+        asorted[ceiling(array_upper(asorted, 1) / 2.0)] +
+        asorted[ceiling(array_upper(asorted, 1) / 2.0) + 1]
+      ) / 2.0
     )
     END
   FROM (
