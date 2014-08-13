@@ -25,8 +25,8 @@ $$
 $$
 LANGUAGE sql IMMUTABLE;
 
+DROP AGGREGATE IF EXISTS median(numeric); -- old method
 DROP AGGREGATE IF EXISTS median(anyelement);
-DROP AGGREGATE IF EXISTS median(numeric);
 CREATE AGGREGATE median(anyelement) (
   SFUNC=array_append,
   STYPE=anyarray,
