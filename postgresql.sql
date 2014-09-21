@@ -1,3 +1,5 @@
+BEGIN;
+
 -- median
 -- http://wiki.postgresql.org/wiki/Aggregate_Median
 
@@ -8,7 +10,7 @@ $$
   (
      SELECT val
      FROM unnest($1) val
-     WHERE VAL IS NOT NULL
+     WHERE val IS NOT NULL
      ORDER BY 1
   ),
   cnt AS
@@ -33,3 +35,5 @@ CREATE AGGREGATE median(anyelement) (
   FINALFUNC=median,
   INITCOND='{}'
 );
+
+COMMIT;
