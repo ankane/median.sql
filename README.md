@@ -1,5 +1,9 @@
 # Median.sql
 
+Starting with Postgres 9.4, use `PERCENTILE_CONT` instead
+
+---
+
 Adds a median function to Postgres
 
 Found on [postgresonline.com](http://www.postgresonline.com/journal/archives/67-Build-Median-Aggregate-Function-in-SQL.html) in a comment by Mike.
